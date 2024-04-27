@@ -14,6 +14,9 @@ vim.opt.number = true
 -- paste without overwriting
 vim.keymap.set('v', 'p', 'P')
 
+-- redo
+vim.keymap.set('n', 'U', '<C-r>')
+
 -- Map jj to ESC in insert mode
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', {noremap = true})
 
