@@ -1,7 +1,11 @@
 -- source previous vim configs
 vim.cmd.source("~/.vimrc")
 
-vim.opt.conceallevel = 1
+-- set tab space
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
 
 -- <leader> key
 vim.keymap.set("", "<Space>", "<Nop>")
@@ -48,18 +52,17 @@ vim.opt.smartcase = true
 -- split right
 vim.opt.splitright = true
 
+-- fold option
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevelstart = 99
+
 if vim.g.vscode then
     -- VSCode extension
 else
 -- load plugins
-require("youzhi.lazy")
--- telescope settings
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+		require("youzhi.lazy")
 
 -- Obsidian settings
 		vim.cmd('noremap <leader>oo :ObsidianOpen<cr>')
+		vim.opt.conceallevel = 1
 end
