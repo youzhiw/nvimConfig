@@ -5,4 +5,3 @@ return {
 		vim.cmd([[colorscheme nightfly]])
 	end,
 }
-	
