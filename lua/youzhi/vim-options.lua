@@ -14,6 +14,7 @@ vim.g.maplocalleader = " "
 
 -- show line number
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- paste without overwriting
 vim.keymap.set('v', 'p', 'P')
@@ -37,22 +38,22 @@ vim.cmd('nmap <leader>s :w<cr>')
 vim.cmd('nmap <leader>qq :tabclose<cr>')
 
 -- skip folds (down, up)
-vim.cmd('nmap j gj')
-vim.cmd('nmap k gk')
+-- vim.cmd('nmap j gj')
+-- vim.cmd('nmap k gk')
 
 -- sync system clipboard
-vim.g.clipboard = {
- name = "xsel",
- copy = {
-  ["+"] = "xsel --nodetach -i -b",
-  ["*"] = "xsel --nodetach -i -p",
- },
- paste = {
-  ["+"] = "xsel  -o -b",
-  ["*"] = "xsel  -o -b",
- },
- cache_enabled = 1,
-}
+--vim.g.clipboard = {
+-- name = "xsel",
+-- copy = {
+--  ["+"] = "xsel --nodetach -i -b",
+--  ["*"] = "xsel --nodetach -i -p",
+-- },
+-- paste = {
+--  ["+"] = "xsel  -o -b",
+--  ["*"] = "xsel  -o -b",
+-- },
+-- cache_enabled = 1,
+--}
 vim.opt.clipboard = 'unnamedplus'
 
 -- search ignoring case
@@ -67,3 +68,17 @@ vim.opt.splitright = true
 -- fold option
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevelstart = 99
+
+--tab option
+vim.keymap.set("n", "<leader>n", ":bn<cr>")
+vim.keymap.set("n", "<leader>p", ":bp<cr>")
+vim.keymap.set("n", "<leader>x", ":bd<cr>")
+
+--lsp
+vim.keymap.set("n",  "<leader>fmp",  ":silent !black %<cr>")
+
+--scrolloff
+vim.o.scrolloff = 5
+
+--cursor
+-- vim.opt.guicursor = "a:blinkon0"  -- Disable Neovim's cursor blink control
